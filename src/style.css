@@ -1,0 +1,65 @@
+body {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    background: url(../images/world.jpg);
+    margin: 0;
+    height: 100%;
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+}
+
+h1 {
+    width: 700px;
+    height: 100px;
+
+    font-style: normal;
+    font-weight: 100;
+    font-size: 56px;
+    line-height: 100px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 6px solid #000000;
+}
+
+.flashCards {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    perspective: 1000px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+.front, .back {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.front{
+    z-index: 2;
+    backface-visibility: hidden;
+    background: #3CE9DE;
+    border-radius: 20px;
+}
+.back{
+    z-index: 1;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background: linear-gradient(#f8da61, #ff5acd);
+    border-radius: 20px;
+}
